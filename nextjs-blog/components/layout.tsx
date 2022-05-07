@@ -39,8 +39,8 @@ export default function Layout({
               priority
               src="/images/logo-chantal-menu.png"
               className={utilStyles.header}
-              height={'144px'}
-              width={'144px'}
+              height={'75px'}
+              width={'215px'}
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
