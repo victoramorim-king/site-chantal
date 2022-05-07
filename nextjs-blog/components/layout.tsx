@@ -43,7 +43,6 @@ export default function Layout({
               width={'215px'}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
           <>
