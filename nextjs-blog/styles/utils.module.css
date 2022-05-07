@@ -25,6 +25,10 @@
   line-height: 1.5;
 }
 
+.headerLogo {
+  margin: 0px 100px 0px 100px;
+}
+
 .borderCircle {
   border-radius: 9999px;
 }
@@ -49,4 +53,52 @@
 
 .lightText {
   color: #666;
+}
+
+.ulNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ulNav li{
+  float:left
+}
+.ulNav li a{
+
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.ulNav li a:hover {
+  background-color: #111111;
+}
+
+.ulNavBl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #666;
+  width: 100%;
+}
+
+.ulNavBl li{
+  float:left
+}
+.ulNavBl li a{
+
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.ulNavBl li a:hover {
+  background-color: #111111;
 }
