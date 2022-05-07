@@ -5,8 +5,8 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = 'Victor Amorim'
-export const siteTitle = 'Victor Blog'
+const name = 'Chantal'
+export const siteTitle = 'Chantal'
 
 export default function Layout({
   children,
@@ -37,8 +37,8 @@ export default function Layout({
           <>
             <Image
               priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
+              src="/images/logo-chantal-menu.png"
+              className={utilStyles.header}
               height={'144px'}
               width={'144px'}
               alt={name}
