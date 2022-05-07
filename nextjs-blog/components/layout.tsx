@@ -35,6 +35,14 @@ export default function Layout({
       <header className={styles.header}>
         {home ? (
           <>
+            <ul className={utilStyles.ulNav}>
+              <li>
+                <a href="">Contato</a>
+              </li>
+              <li>
+                <a href="">Representantes</a>
+              </li>
+           <li className={utilStyles.headerLogo}>
             <Image
               priority
               src="/images/logo-chantal-menu.png"
@@ -42,7 +50,16 @@ export default function Layout({
               height={'75px'}
               width={'215px'}
               alt={name}
-            />
+              />
+              </li> 
+              <li>
+                <a href="">Downlaods</a>
+              </li>
+              <li>
+                <a href="">Pesquisar</a>
+              </li>
+
+            </ul>
           </>
         ) : (
           <>
@@ -65,6 +82,23 @@ export default function Layout({
             </h2>
           </>
         )}
+      </header>
+      <header className={styles.headeBl}> 
+            <ul className={utilStyles.ulNavBl}>
+              <li >
+                <a href="">Contato</a>
+              </li>
+              <li>
+                <a href="">Representantes</a>
+              </li>
+              <li>
+                <a href="">Downlaods</a>
+              </li>
+              <li>
+                <a href="">Pesquisar</a>
+              </li>
+
+            </ul>
       </header>
       <main>{children}</main>
       {!home && (
