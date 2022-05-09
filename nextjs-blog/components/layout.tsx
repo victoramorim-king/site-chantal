@@ -4,9 +4,21 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import ReactDOM from 'react-dom';
+
 
 const name = 'Chantal'
 export const siteTitle = 'Chantal'
+
+function myFunction() {
+  document.getElementById("myDropDown").classList.toggle(`${utilStyles.show}`);
+  const window = document.getElementById(`${utilStyles.navMain}`)
+  return window
+}
+
+
+
+// Close the dropdown menu if the user clicks outside 
 
 export default function Layout({
   children,
@@ -16,7 +28,7 @@ export default function Layout({
   home?: boolean
 }) {
   return (
-    <div className={styles.container}>
+    <div  className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,34 +44,37 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header  className={styles.header}>
         {home ? (
           <>
-            <ul className={utilStyles.ulNav}>
-              <li>
-                <a href="">Contato</a>
-              </li>
-              <li>
-                <a href="">Representantes</a>
-              </li>
-           <li className={utilStyles.headerLogo}>
-            <Image
-              priority
-              src="/images/logo-chantal-menu.png"
-              className={utilStyles.header}
-              height={'75px'}
-              width={'215px'}
-              alt={name}
-              />
-              </li> 
-              <li>
-                <a href="">Downlaods</a>
-              </li>
-              <li>
-                <a href="">Pesquisar</a>
-              </li>
+            <nav className={utilStyles.navMain}>
 
-            </ul>
+              <ul className={utilStyles.ulNav}>
+                <li>
+                  <a href="">Contato</a>
+                </li>
+                <li>
+                  <a href="">Representantes</a>
+                </li>
+                <li className={utilStyles.headerLogo}>
+                  <Image
+                    priority
+                    src="/images/logo-chantal-menu.png"
+                    className={utilStyles.header}
+                    height={'75px'}
+                    width={'215px'}
+                    alt={name}
+                  />
+                </li>
+                <li>
+                  <a href="">Downlaods</a>
+                </li>
+                <li>
+                  <a href="">Pesquisar</a>
+                </li>
+
+              </ul>
+            </nav>
           </>
         ) : (
           <>
@@ -83,24 +98,34 @@ export default function Layout({
           </>
         )}
       </header>
-      <header className={styles.headeBl}> 
-            <ul className={utilStyles.ulNavBl}>
-              <li >
-                <a href="">Contato</a>
-              </li>
-              <li>
-                <a href="">Representantes</a>
-              </li>
-              <li>
-                <a href="">Downlaods</a>
-              </li>
-              <li>
-                <a href="">Pesquisar</a>
-              </li>
+      <nav className={styles.headerBl}>
+        <ul className={utilStyles.ulNavBl}>
+          <li >
+            <a href="">Quem somos</a>
+          </li>
+          <li>
+            <a href="">Produtos</a>
+          </li>
+          
+          <li  className={utilStyles.dropDown}>
+            <a onClick={myFunction} className={utilStyles.dropBtn}>Projetos Sociais &#x25bc;</a>
+            <div  id='myDropDown' className={utilStyles.dropDownContent}>
+              <a href="#">TeleSuporte</a>
+              <a href="#">Exercício com faixa circular</a>
+              <a href="#">Exercício com faixa com alças</a>
+            </div> 
+          </li>
+          
+          <li>
+            <a href="">Suporte</a>
+          </li>
+          <li>
+            <a href="">Parceiros</a>
+          </li>
 
-            </ul>
-      </header>
-      <main>{children}</main>
+        </ul>
+      </nav>
+      <main >{children}</main>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
