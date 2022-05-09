@@ -175,3 +175,8 @@
   color: #00a198;
 }
 .show {display:block;} 
+
+.menuTriangle{
+  font-size: 10px;
+  vertical-align: text-top;
+}

@@ -5,15 +5,18 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import ReactDOM from 'react-dom';
+import { listenerCount } from 'process'
 
 
 const name = 'Chantal'
 export const siteTitle = 'Chantal'
 
-function myFunction() {
-  document.getElementById("myDropDown").classList.toggle(`${utilStyles.show}`);
-  const window = document.getElementById(`${utilStyles.navMain}`)
-  return window
+onclick = function(event) {
+  if (1 == 1){
+
+    document.getElementById('myDropDown').classList.toggle(`${utilStyles.show}`);
+  }
+  
 }
 
 
@@ -108,7 +111,7 @@ export default function Layout({
           </li>
           
           <li  className={utilStyles.dropDown}>
-            <a onClick={myFunction} className={utilStyles.dropBtn}>Projetos Sociais &#x25bc;</a>
+            <a onClick={myFunction} className={utilStyles.dropBtn}>Projetos Sociais <strong className={utilStyles.menuTriangle}>&#x25bc;</strong></a>
             <div  id='myDropDown' className={utilStyles.dropDownContent}>
               <a href="#">TeleSuporte</a>
               <a href="#">Exercício com faixa circular</a>
@@ -116,8 +119,13 @@ export default function Layout({
             </div> 
           </li>
           
-          <li>
-            <a href="">Suporte</a>
+          <li className={utilStyles.dopDown}>
+            <a onClick={myFunction} className={utilStyles.dropBtn}>Suporte</a>
+            <div id='myDropDown' className={utilStyles.dropDownContent}>
+              <a href=""></a>
+              <a href=""></a>
+              <a href=""></a>
+            </div>
           </li>
           <li>
             <a href="">Parceiros</a>
