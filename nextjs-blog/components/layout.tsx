@@ -1,12 +1,18 @@
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from './layout.module.css';
+import utilStyles from '../styles/utils.module.css';
+import Link from 'next/link';
+import UnopDropdown from "unop-react-dropdown";
 
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
 
-const name = 'Victor Amorim'
-export const siteTitle = 'Victor Blog'
+
+const name = 'Chantal'
+export const siteTitle = 'Chantal'
+
+
+
+// Close the dropdown menu if the user clicks outside 
 
 export default function Layout({
   children,
@@ -16,7 +22,7 @@ export default function Layout({
   home?: boolean
 }) {
   return (
-    <div className={styles.container}>
+    <div  className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,18 +38,37 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header  className={styles.header}>
         {home ? (
           <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={'144px'}
-              width={'144px'}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <nav className={utilStyles.navMain}>
+
+              <ul className={utilStyles.ulNav}>
+                <li>
+                  <a href="">Contato</a>
+                </li>
+                <li>
+                  <a href="">Representantes</a>
+                </li>
+                <li className={utilStyles.headerLogo}>
+                  <Image
+                    priority
+                    src="/images/logo-chantal-menu.png"
+                    className={utilStyles.header}
+                    height={'75px'}
+                    width={'215px'}
+                    alt={name}
+                  />
+                </li>
+                <li>
+                  <a href="">Downlaods</a>
+                </li>
+                <li>
+                  <a href="">Pesquisar</a>
+                </li>
+
+              </ul>
+            </nav>
           </>
         ) : (
           <>
@@ -67,7 +92,60 @@ export default function Layout({
           </>
         )}
       </header>
-      <main>{children}</main>
+      <nav className={styles.headerBl}>
+        <ul className={utilStyles.ulNavBl}>
+          <li >
+            <a href="">Quem somos</a>
+          </li>
+          <li>
+            <a href="">Produtos</a>
+          </li>
+          
+          <li>
+            <a>Projetos Sociais</a>
+          </li>
+          
+          <li>
+            <UnopDropdown
+            dropdownMenuClassName={utilStyles.dropDownContent}
+              //onAppear={handler}
+              //onDisappearStart={handler}
+              trigger={<p className={utilStyles.dropBtn}>suporte <strong className={utilStyles.menuTriangle}>&#x25bc; </strong></p>}
+              delay={300}
+              align="CENTER"
+              hover
+            >
+              
+
+              <a href="#">TeleSuporte</a>
+              <a href="#">Exercício com faixa circular</a>
+              <a href="#">Exercício com faixa com alças</a>
+
+            </UnopDropdown>
+
+          </li>
+          <li>
+            <UnopDropdown
+            dropdownMenuClassName={utilStyles.dropDownContent}
+              //onAppear={handler}
+              //onDisappearStart={handler}
+              trigger={<p className={utilStyles.dropBtn}>Parceiros <strong className={utilStyles.menuTriangle}>&#x25bc; </strong></p>}
+              delay={300}
+              align="CENTER"
+              hover
+            >
+              
+
+              <a href="#">TeleSuporte</a>
+              <a href="#">Exercício com faixa circular</a>
+              <a href="#">Exercício com faixa com alças</a>
+
+            </UnopDropdown>
+          </li>
+
+        </ul>
+      </nav>
+      <main >{children}</main>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
