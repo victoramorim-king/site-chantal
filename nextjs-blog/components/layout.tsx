@@ -1,23 +1,14 @@
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from './layout.module.css';
+import utilStyles from '../styles/utils.module.css';
+import Link from 'next/link';
+import UnopDropdown from "unop-react-dropdown";
 
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
-import ReactDOM from 'react-dom';
-import { listenerCount } from 'process'
 
 
 const name = 'Chantal'
 export const siteTitle = 'Chantal'
-
-onclick = function(event) {
-  if (1 == 1){
-
-    document.getElementById('myDropDown').classList.toggle(`${utilStyles.show}`);
-  }
-  
-}
 
 
 
@@ -110,25 +101,46 @@ export default function Layout({
             <a href="">Produtos</a>
           </li>
           
-          <li  className={utilStyles.dropDown}>
-            <a onClick={myFunction} className={utilStyles.dropBtn}>Projetos Sociais <strong className={utilStyles.menuTriangle}>&#x25bc;</strong></a>
-            <div  id='myDropDown' className={utilStyles.dropDownContent}>
+          <li>
+            <a>Projetos Sociais</a>
+          </li>
+          
+          <li>
+            <UnopDropdown
+            dropdownMenuClassName={utilStyles.dropDownContent}
+              //onAppear={handler}
+              //onDisappearStart={handler}
+              trigger={<p className={utilStyles.dropBtn}>suporte <strong className={utilStyles.menuTriangle}>&#x25bc; </strong></p>}
+              delay={300}
+              align="CENTER"
+              hover
+            >
+              
+
               <a href="#">TeleSuporte</a>
               <a href="#">Exercício com faixa circular</a>
               <a href="#">Exercício com faixa com alças</a>
-            </div> 
-          </li>
-          
-          <li className={utilStyles.dopDown}>
-            <a onClick={myFunction} className={utilStyles.dropBtn}>Suporte</a>
-            <div id='myDropDown' className={utilStyles.dropDownContent}>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-            </div>
+
+            </UnopDropdown>
+
           </li>
           <li>
-            <a href="">Parceiros</a>
+            <UnopDropdown
+            dropdownMenuClassName={utilStyles.dropDownContent}
+              //onAppear={handler}
+              //onDisappearStart={handler}
+              trigger={<p className={utilStyles.dropBtn}>Parceiros <strong className={utilStyles.menuTriangle}>&#x25bc; </strong></p>}
+              delay={300}
+              align="CENTER"
+              hover
+            >
+              
+
+              <a href="#">TeleSuporte</a>
+              <a href="#">Exercício com faixa circular</a>
+              <a href="#">Exercício com faixa com alças</a>
+
+            </UnopDropdown>
           </li>
 
         </ul>

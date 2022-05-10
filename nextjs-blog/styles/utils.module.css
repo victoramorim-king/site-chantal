@@ -89,6 +89,10 @@
   text-align: center;
 }
 
+.ulNavBl li .UnopDropDown{
+  color: white;
+}
+
 .ulNavBl li {
   display: inline-block;
   vertical-align: 15px;
@@ -101,13 +105,20 @@
   padding: 10px 21px 0px 21px;
   text-decoration: none;
 }
+.ulNavBl li p{
+
+  display: block;
+  color: white;
+  padding: 10px 21px 0px 21px;
+  text-decoration: none;
+}
+
 
 .ulNavBl li div a{
 
   display: block;
   color: #00a198;
   text-decoration: none;
-  width: 300px;
   text-align: left;
   font-size: smaller;
   line-height: 50px;
@@ -132,18 +143,9 @@
   background-color: #00a198;
 }
 
-.dropBtn {
-  color: #00a198;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
 
-
-.dropDownContent {
+.dropDownContent{
   border-top: #00a198 solid 5px;
-  display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
@@ -152,12 +154,15 @@
   margin-top: 20px;
 
 }
-
+.dropBtn {
+  color: white;
+}
 .dropDownContent a {
   color: #00a198;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  width: 300px;
 }
 
 .dropDown{
@@ -169,6 +174,7 @@
 .dropDownContent a:hover {
   background-color: #00a198;
   color: #f1f1f1;
+  width: 300px;
 }
 
 #myDropDown a {
