@@ -130,7 +130,6 @@ export default function Layout({
               //onDisappearStart={handler}
               trigger={<p className={utilStyles.dropBtn}>Parceiros <strong className={utilStyles.menuTriangle}>&#x25bc; </strong></p>}
               delay={300}
-              align="CENTER"
               hover
             >
               
